@@ -15,8 +15,11 @@ Plugin 'gmarik/Vundle.vim'
 " used Bundle instead of Plugin)
 Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
+Plugin 'preservim/nerdtree'
+Plugin 'frazrepo/vim-rainbow'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'jiangmiao/auto-pairs'
 " ...
@@ -29,6 +32,8 @@ filetype plugin indent on    " required
 set foldmethod=indent
 set foldlevel=99
 
+set backspace=indent,eol,start
+
 au BufNewFile,BufRead *.py
     \set tabstop=4
     \set softtabstop=4
@@ -39,7 +44,7 @@ au BufNewFile,BufRead *.py
     \set fileformat=unix
 
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
- highlight BadWhitespace ctermbg=red guibg=darkred
+ highlight BadWhitespace ctermbg=blue guibg=darkred
 
 set encoding=utf-8
 let python_highlight_all=1
@@ -58,6 +63,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+let g:rainbow_active = 1
 
 "vim-plug
 " Plugins will be downloaded under the specified directory.
