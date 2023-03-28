@@ -117,4 +117,11 @@ unset __conda_setup
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-alias we="curl wttr.in/Sirjan"
+alias we="curl wttr.in/Tehran"
+alias python='python3'
+source /Users/am.a/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#alias python=/usr/local/bin/python3.7
+alias python=/usr/bin/python3
+alias ydl="youtube-dl"
+alias python=/usr/local/bin/python3.10
+export PATH="${HOME}/.pyenv/shims:${PATH}"
